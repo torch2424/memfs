@@ -4,4 +4,5 @@ node_modules
 .nyc_output
 coverage
 package-lock.json
-/lib/
+# Commented for the fork
+# /lib/
