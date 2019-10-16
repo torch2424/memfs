@@ -19,8 +19,7 @@
     "prettier": "prettier --ignore-path .gitignore --write \"src/**/*.{ts,js}\"",
     "prettier:diff": "prettier -l \"src/**/*.{ts,js}\"",
     "tslint": "tslint \"src/**/*.ts\" -t verbose",
-    "precommit": "pretty-quick --staged",
-    "prepush": "yarn prettier:diff && yarn tslint"
+    "precommit": "pretty-quick --staged"
   },
   "repository": {
     "type": "git",
