@@ -15,6 +15,9 @@ import extend = require('fast-extend');
 import util = require('util');
 import createPromisesApi from './promises';
 
+// tslint:disable-next-line
+console.log('Yoooo we in the volume!');
+
 const resolveCrossPlatform = pathModule.resolve;
 const {
   O_RDONLY,
@@ -893,6 +896,8 @@ export class Volume {
   }
 
   private openLink(link: Link, flagsNum: number, resolveSymlinks: boolean = true): File {
+    // tslint:disable-next-line
+    console.log('volume openLink');
     if (this.openFiles >= this.maxFiles) {
       // Too many open files.
       throw createError(EMFILE, 'open', link.getPath());
