@@ -15,9 +15,6 @@ import extend = require('fast-extend');
 import util = require('util');
 import createPromisesApi from './promises';
 
-// tslint:disable-next-line
-console.log('Yoooo we in the volume!');
-
 const resolveCrossPlatform = pathModule.resolve;
 const {
   O_RDONLY,
@@ -910,7 +907,15 @@ export class Volume {
 
     const node = realLink.getNode();
     // tslint:disable-next-line
-    console.log('Yoooo', node, node.isDirectory(), flagsNum === FLAGS.r);
+    console.log('openLink stubb');
+    // tslint:disable-next-line
+    console.log('link', link);
+    // tslint:disable-next-line
+    console.log('Node', node);
+    // tslint:disable-next-line
+    console.log('node.isDirectory()', node.isDirectory());
+    // tslint:disable-next-line
+    console.log('flagsNum === FLAGS.r', flagsNum === FLAGS.r);
     if (node.isDirectory()) {
       const isRead = flagsNum === FLAGS.r;
       const isDir = (flagsNum & constants.O_DIRECTORY) !== 0;
