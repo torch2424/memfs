@@ -6,6 +6,8 @@ const { fsSyncMethods, fsAsyncMethods } = require('fs-monkey/lib/util/lists');
 import { constants } from './constants';
 const { F_OK, R_OK, W_OK, X_OK } = constants;
 
+console.log('You are using the forked memfs for wasmer-js');
+
 export const Volume = _Volume;
 
 // Default volume.
