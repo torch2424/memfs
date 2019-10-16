@@ -893,8 +893,6 @@ export class Volume {
   }
 
   private openLink(link: Link, flagsNum: number, resolveSymlinks: boolean = true): File {
-    // tslint:disable-next-line
-    console.log('volume openLink');
     if (this.openFiles >= this.maxFiles) {
       // Too many open files.
       throw createError(EMFILE, 'open', link.getPath());
@@ -906,16 +904,6 @@ export class Volume {
     if (!realLink) throwError(ENOENT, 'open', link.getPath());
 
     const node = realLink.getNode();
-    // tslint:disable-next-line
-    console.log('openLink stubb');
-    // tslint:disable-next-line
-    console.log('link', link);
-    // tslint:disable-next-line
-    console.log('Node', node);
-    // tslint:disable-next-line
-    console.log('node.isDirectory()', node.isDirectory());
-    // tslint:disable-next-line
-    console.log('flagsNum === FLAGS.r', flagsNum === FLAGS.r);
     if (node.isDirectory()) {
       const isRead = flagsNum === FLAGS.r;
       const isDir = (flagsNum & constants.O_DIRECTORY) !== 0;
