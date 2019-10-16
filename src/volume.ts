@@ -904,6 +904,8 @@ export class Volume {
     if (!realLink) throwError(ENOENT, 'open', link.getPath());
 
     const node = realLink.getNode();
+    // tslint:disable-next-line
+    console.log('Yoooo', node, node.isDirectory(), flagsNum === FLAGS.r);
     if (node.isDirectory()) {
       const isRead = flagsNum === FLAGS.r;
       const isDir = (flagsNum & constants.O_DIRECTORY) !== 0;
