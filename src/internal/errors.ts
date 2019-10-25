@@ -8,7 +8,12 @@ const kCode = typeof Symbol === 'undefined' ? '_kCode' : (Symbol as any)('code')
 const messages = {}; // new Map();
 
 // Lazily loaded
-let assert = null;
+let assert = require('browser-assert');
+assert.strictEqual = (actual: any, expected: any) => {
+  if (actual !== expected) {
+    throw new Error('Strict Equal Assetion Error');
+  }
+};
 let util = null;
 
 function makeNodeError(Base) {
@@ -57,9 +62,6 @@ class AssertionError extends global.Error {
 }
 
 function message(key, args) {
-  if (assert === null) {
-    assert = require('assert');
-  }
   assert.strictEqual(typeof key, 'string');
   // const msg = messages.get(key);
   const msg = messages[key];
