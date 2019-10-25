@@ -8,6 +8,8 @@ const kCode = typeof Symbol === 'undefined' ? '_kCode' : (Symbol as any)('code')
 const messages = {}; // new Map();
 
 // Lazily loaded
+// Using a custom Assert
+// https://github.com/webpack/webpack/issues/1019#issuecomment-296850308
 let assert = require('browser-assert');
 assert.strictEqual = (actual: any, expected: any) => {
   if (actual !== expected) {
